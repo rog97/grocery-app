@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar';
+import RecipesList from './RecipesList';
 import edamam from '../apis/edamam';
 import accessAPI from '../apis/accessAPI';
 
@@ -28,10 +29,19 @@ class App extends React.Component {
     console.log(this.state.recipes[7].recipe.ingredients);
   }
 
+  renderList() {
+    if (this.state.isLoaded) {
+      return <RecipesList recipes={this.state.recipes}/>;
+    } else {
+      return <p>Loading...</p>;
+    }
+  }
+
   render() {
     return (
       <div className="ui container">
           <SearchBar onFormSubmit={this.onSearchSubmit} />
+          {this.renderList()}
       </div>
     );
   }
