@@ -1,10 +1,15 @@
 import React from 'react';
+import RecipeCard from './RecipeCard';
 
 const RecipesList = props => {
-  console.log(props.recipes[0].recipe.label);
+
+  const renderList = props.recipes.map((recipe, index) => {
+    return <RecipeCard key={index} recipe={recipe.recipe} />;
+  });
+
   return (
-    <div>
-      Recipes
+    <div className="ui relaxed divided list">
+      {renderList}
     </div>
   );
 }

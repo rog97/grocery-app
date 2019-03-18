@@ -21,12 +21,12 @@ class App extends React.Component {
     });
 
     this.setState({ recipes: res.data.hits, isLoaded: true });
-    console.log(this.state.recipes[7].recipe);
-    console.log(this.state.recipes[7].recipe.label);
-    console.log(this.state.recipes[7].recipe.image);
-    console.log(this.state.recipes[7].recipe.calories);
-    console.log(this.state.recipes[7].recipe.totalTime);
-    console.log(this.state.recipes[7].recipe.ingredients);
+    // console.log(this.state.recipes[7].recipe);
+    // console.log(this.state.recipes[7].recipe.label);
+    // console.log(this.state.recipes[7].recipe.image);
+    // console.log(this.state.recipes[7].recipe.calories);
+    // console.log(this.state.recipes[7].recipe.totalTime);
+    // console.log(this.state.recipes[7].recipe.ingredients);
   }
 
   renderList() {
