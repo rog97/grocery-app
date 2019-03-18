@@ -7,16 +7,24 @@ class SearchBar extends React.Component {
     this.setState({ queryTerm: event.target.value });
   }
 
+  onFormSubmit = (event) => {
+    // Prevent page to reload on form submission
+    event.preventDefault();
+
+    // Need to pass the query term back up to the App! Using callback to do this
+    this.props.onFormSubmit(this.state.queryTerm);
+  }
+
   render() {
     return (
       <div className="search-bar ui segment">
-        <form className="ui form">
+        <form className="ui form" onSubmit={this.onFormSubmit}>
           <div className="field">
             <label>Search a recipe</label>
             <input
               type="text"
               placeholder="I'm in the mood for..."
-              value={this.state.term}
+              value={this.state.queryTerm}
               onChange={this.onInputChange}
             />
           </div>
