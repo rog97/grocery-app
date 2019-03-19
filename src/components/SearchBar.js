@@ -11,7 +11,7 @@ class SearchBar extends React.Component {
     // Prevent page to reload on form submission
     event.preventDefault();
 
-    // Need to pass the query term back up to the App! Using callback to do this
+    // Need to pass the query term back up to the App component - using callback to do this
     this.props.onFormSubmit(this.state.queryTerm);
   }
 

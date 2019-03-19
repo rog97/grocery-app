@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 import SearchBar from './SearchBar';
 import RecipesList from './RecipesList';
 import edamam from '../apis/edamam';
@@ -44,9 +45,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui text container">
-          <SearchBar onFormSubmit={this.onSearchSubmit} />
-          {this.renderList()}
+      <div>
+        <Header />
+        <div className="ui text container">
+            <SearchBar onFormSubmit={this.onSearchSubmit} />
+            {this.renderList()}
+        </div>
       </div>
     );
   }
