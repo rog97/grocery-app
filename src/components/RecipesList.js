@@ -8,7 +8,7 @@ const RecipesList = props => {
   });
 
   return (
-    <div className="ui relaxed divided list">
+    <div className="ui middle aligned divided list">
       {renderList}
     </div>
   );
