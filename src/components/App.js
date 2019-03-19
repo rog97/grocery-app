@@ -21,6 +21,7 @@ class App extends React.Component {
     });
 
     this.setState({ recipes: res.data.hits, isLoaded: true });
+    // console.log(this.state.recipes[0].recipe);
   }
 
   renderList() {
