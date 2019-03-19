@@ -4,7 +4,7 @@ import RecipeCard from './RecipeCard';
 const RecipesList = props => {
 
   const renderList = props.recipes.map((recipe, index) => {
-    return <RecipeCard key={index} recipe={recipe.recipe} />;
+    return <RecipeCard key={index} recipe={recipe.recipe} onSelectItems={props.onSelectItems} />;
   });
 
   return (

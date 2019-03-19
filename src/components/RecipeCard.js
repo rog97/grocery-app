@@ -1,15 +1,22 @@
 import React from 'react';
 
 class RecipeCard extends React.Component {
-  state = { groceryList: [] }
+  // state = { groceryList: [] }
+
+  // onButtonClick = async () => {
+  //   const ingredients = await this.props.recipe.ingredients.map( ingredient => {
+  //     return ingredient.text;
+  //   });
+  //
+  //   this.setState({ groceryList: ingredients });
+  //   console.log(this.state.groceryList);
+  // }
 
   onButtonClick = async () => {
     const ingredients = await this.props.recipe.ingredients.map( ingredient => {
       return ingredient.text;
     });
-
-    this.setState({ groceryList: ingredients });
-    console.log(this.state.groceryList);
+    this.props.onSelectItems(ingredients);
   }
 
   render() {
