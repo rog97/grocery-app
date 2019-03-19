@@ -1,6 +1,16 @@
 import React from 'react';
 
 class RecipeCard extends React.Component {
+  state = { groceryList: [] }
+
+  onButtonClick = async () => {
+    const ingredients = await this.props.recipe.ingredients.map( ingredient => {
+      return ingredient.text;
+    });
+
+    this.setState({ groceryList: ingredients });
+    console.log(this.state.groceryList);
+  }
 
   render() {
     return (
@@ -16,7 +26,7 @@ class RecipeCard extends React.Component {
             </h2>
 
             <div className="ui list">
-            <button className="ui vertical animated button teal right floated" tabIndex="0">
+            <button onClick={this.onButtonClick} className="ui vertical animated button teal right floated" tabIndex="0">
               <div className="hidden content">Add</div>
               <div className="visible content">
                 <i className="shop icon"></i>
