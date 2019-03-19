@@ -33,7 +33,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container">
+      <div className="ui text container">
           <SearchBar onFormSubmit={this.onSearchSubmit} />
           {this.renderList()}
       </div>
