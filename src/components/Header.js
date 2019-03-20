@@ -3,7 +3,7 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <div className="ui secondary pointing menu">
+    <div className="ui secondary pointing menu white">
       <img
         className="logo"
         src="https://static1.squarespace.com/static/5639629de4b05b184b572406/t/56a7c667ab28106eca63707b/1453835881454/supermarket"

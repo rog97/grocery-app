@@ -6,7 +6,11 @@ import edamam from '../apis/edamam';
 import accessAPI from '../apis/accessAPI';
 
 class App extends React.Component {
-  state = { recipes: [], groceryList: [], isLoaded: false };
+  state = {
+    recipes: [],
+    groceryList: [],
+    isLoaded: false
+  };
 
   componentDidMount() {
     this.onSearchSubmit('soup');
