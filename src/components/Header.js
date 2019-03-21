@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -13,9 +14,9 @@ const Header = () => {
         <h3 id="app-name">My Grocery App</h3>
       </div>
       <div className="ui item right">
-        <button className="ui teal button right menu">
+        <Link to="/groceries" className="ui teal button right menu">
           View Items
-        </button>
+        </Link>
       </div>
     </div>
   );

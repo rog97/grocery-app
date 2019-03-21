@@ -1,60 +1,26 @@
 import React from 'react';
 import Header from './Header';
-import SearchBar from './SearchBar';
-import RecipesList from './RecipesList';
-import edamam from '../apis/edamam';
-import accessAPI from '../apis/accessAPI';
+import Main from './Main';
+import GroceryList from './GroceryList';
+import { BrowserRouter, Route } from 'react-router-dom';
+
 
 class App extends React.Component {
-  state = {
-    recipes: [],
-    groceryList: [],
-    isLoaded: false
-  };
-
-  componentDidMount() {
-    this.onSearchSubmit('soup');
-  }
-
-  onSearchSubmit = async (queryTerm) => {
-    const res = await edamam.get('/search', {
-      params: {
-        q: queryTerm,
-        app_id: accessAPI.ID,
-        app_key: accessAPI.KEY,
-      }
-    });
-
-    this.setState({ recipes: res.data.hits, isLoaded: true });
-    // console.log(this.state.recipes[0].recipe.ingredients[0].text);
-  }
-
-  getIngredients = (ingredients) => {
-    if (this.state.groceryList) {
-      const existingList = this.state.groceryList;
-      this.setState({ groceryList: [...existingList, ...ingredients] });
-    } else {
-      this.setState({ groceryList: ingredients });
-    }
-    console.log(this.state.groceryList);
-  }
-
-  renderList() {
-    if (this.state.isLoaded) {
-      return <RecipesList onSelectItems={this.getIngredients} recipes={this.state.recipes}/>;
-    } else {
-      return <div className="ui active centered inline loader"></div>;
-    }
-  }
-
   render() {
     return (
       <div>
-        <Header />
-        <div className="ui text container">
-            <SearchBar onFormSubmit={this.onSearchSubmit} />
-            {this.renderList()}
-        </div>
+        <BrowserRouter>
+          <div>
+            <Header />
+            <Route path="/" exact component={Main} />
+            <Route path="/groceries" exact component={GroceryList} />
+            {/* <Route
+              path="/groceries"
+              exact={true}
+              render={(props) => <GroceryList {...props} groceries={this.state.groceryList}/>}
+            /> */}
+          </div>
+        </BrowserRouter>
       </div>
     );
   }
