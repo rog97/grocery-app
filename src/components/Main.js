@@ -27,16 +27,6 @@ class Main extends React.Component {
     // console.log(this.state.recipes[0].recipe.ingredients[0].text);
   }
 
-  // getIngredients = (ingredients) => {
-  //   if (this.state.groceryList) {
-  //     const existingList = this.state.groceryList;
-  //     this.setState({ groceryList: [...existingList, ...ingredients] });
-  //   } else {
-  //     this.setState({ groceryList: ingredients });
-  //   }
-  //   console.log(this.state.groceryList);
-  // }
-
   renderList() {
     if (this.state.isLoaded) {
       return <RecipesList onSelectItems={this.props.onSelectItems} recipes={this.state.recipes}/>;

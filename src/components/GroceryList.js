@@ -1,8 +1,9 @@
 import React from 'react';
+import Ingredient from './Ingredient';
 
 const GroceryList = props => {
   const renderList = props.groceryItems.map((item, index) => {
-    return item;
+    return <Ingredient key={index} item={item} />;
   });
 
   return (
