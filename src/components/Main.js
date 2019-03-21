@@ -7,7 +7,6 @@ import accessAPI from '../apis/accessAPI';
 class Main extends React.Component {
   state = {
     recipes: [],
-    groceryList: [],
     isLoaded: false
   };
 
@@ -28,19 +27,19 @@ class Main extends React.Component {
     // console.log(this.state.recipes[0].recipe.ingredients[0].text);
   }
 
-  getIngredients = (ingredients) => {
-    if (this.state.groceryList) {
-      const existingList = this.state.groceryList;
-      this.setState({ groceryList: [...existingList, ...ingredients] });
-    } else {
-      this.setState({ groceryList: ingredients });
-    }
-    console.log(this.state.groceryList);
-  }
+  // getIngredients = (ingredients) => {
+  //   if (this.state.groceryList) {
+  //     const existingList = this.state.groceryList;
+  //     this.setState({ groceryList: [...existingList, ...ingredients] });
+  //   } else {
+  //     this.setState({ groceryList: ingredients });
+  //   }
+  //   console.log(this.state.groceryList);
+  // }
 
   renderList() {
     if (this.state.isLoaded) {
-      return <RecipesList onSelectItems={this.getIngredients} recipes={this.state.recipes}/>;
+      return <RecipesList onSelectItems={this.props.onSelectItems} recipes={this.state.recipes}/>;
     } else {
       return <div className="ui active centered inline loader"></div>;
     }

@@ -1,9 +1,13 @@
 import React from 'react';
 
-const GroceryList = (props) => {
+const GroceryList = props => {
+  const renderList = props.groceryItems.map((item, index) => {
+    return item;
+  });
+
   return (
     <div>
-      Grocery List!
+      {renderList}
     </div>
   );
 }
