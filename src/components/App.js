@@ -18,6 +18,15 @@ class App extends React.Component {
     console.log(this.state.groceryList);
   }
 
+  removeIngredient = (ingredient) => {
+    // Filter out any chosen ingredient
+    const reducedIngredients = this.state.groceryList.filter( item => {
+      return item !== ingredient;
+    });
+    
+    this.setState({ groceryList: reducedIngredients });
+  }
+
   render() {
     return (
       <div>
@@ -32,7 +41,10 @@ class App extends React.Component {
             <Route
               path="/groceries"
               exact
-              render={(props) => <GroceryList {...props} groceryItems={this.state.groceryList} />}
+              render={(props) => <GroceryList {...props}
+                groceryItems={this.state.groceryList}
+                onSelectIngredient={this.removeIngredient}
+               />}
             />
           </div>
         </BrowserRouter>
