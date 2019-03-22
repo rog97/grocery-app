@@ -7,8 +7,11 @@ const GroceryList = props => {
   });
 
   return (
-    <div>
-      {renderList}
+    <div className="ui text container">
+      <h3>Groceries I need to buy</h3>
+      <div className="ui middle aligned divided list">
+        {renderList}
+      </div>
     </div>
   );
 }
