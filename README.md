@@ -21,9 +21,9 @@ As a user, I will also have the ability to navigate to the shopping list. In the
 
 Biggest challenge for me was how to pass state from a lower-level component back up to the `App` or some higher-level component. I ran into this challenge three times:
 
-  1/ Storing the query term from the search bar component
-  2/ Getting the ingredients from a chosen recipe
-  3/ Removing an item from the grocery list
+  * Storing the query term from the search bar component
+  * Getting the ingredients from a chosen recipe
+  * Removing an item from the grocery list
 
 The pattern I followed was to define a function in the higher-level component where the state is located - I used this function to eventually set state again. Then, I passed the function down all the way to the lower-level component where an action would occur. At the lower-level component, I would create an event listener that would get called upon some element event (eg. onClick) happening. In the body of the lower-level component, I'd pass in the function from the higher-level component - which I could access through the props system - as a callback. Lastly, I'd invoke the callback with some form of state from the lower-level component.
 
