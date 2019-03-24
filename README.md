@@ -17,6 +17,11 @@ As a user, I will also have the ability to navigate to the shopping list. In the
 * Edamam API - free recipe-focused API
 * Semantic UI - minimal styling that is neutral but elegant
 
+### App Structure
+
+Component Hierarchy:
+![alt text](./public/appStructure.png "component hierarchy")
+
 ### Key Challenges
 
 Biggest challenge for me was how to pass state from a lower-level component back up to the `App` or some higher-level component. I ran into this challenge three times:
@@ -31,6 +36,6 @@ Another challenge I ran into was implementing react router. Specifically, for th
 
 Last challenge I faced was calling the API using fetch. It kept throwing an error whenever I'd access the response of the request. I installed an npm package called `axios`, and after some initial setup, I got it to work just fine.
 
-### What's next?
+### What's Next?
 
 I'd love to dig into `Redux` for more advanced state management. This application is very small, but I could sense it was getting a bit tricky to manage state across the different components. I'd also like to store data using Firebase - didn't have the time to get to it during the project. Lastly, would like to work on some user authentication to make it into a more robust app.
